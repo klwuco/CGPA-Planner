@@ -6,7 +6,7 @@ If a copy of the MPL was not distributed with this file, You can obtain one at h
 from itertools import combinations_with_replacement, chain, product, groupby
 from subject import Subject
 """
-Grade Analyzer v1.1
+Grade Analyzer v1.2
 by klwuco (Wu Ka Lok, Cousin)
 Printing out the hypothetical CGPA and the grades per subject needed to achieve a target CGPA target range.
 
@@ -35,10 +35,16 @@ Variables to change:
    Course credits and number of courses that have that credit for your course to be taken.
    eg: {3:3,4:1,1:2} corresponds to 3 3-credit course, 1 4-credit course and 2 1-credit course.
 
-4) Union(None, tuple) expected
+4) Results Narrowing options
+
+A) Union(None, tuple) expected
    A tuple of Subject class for any assumed grades for the course to be taken.(Subject(credit:int, grade:str))
    None if there is none expected grades.
    eg: (Subject(4, 'A'), Subject(3, 'B'))
+
+B) str min_grade
+   str max_grade
+   The min/max (inclusive) grade that are allowed in the results.
 
 5)
     i) bool write_to_file
@@ -48,14 +54,27 @@ Variables to change:
 """
 
 # Variables
+# 1
 current_grade = (Subject(3, 'B'), Subject(3, 'A-'), Subject(3, 'D'), Subject(4, 'B+'))
 current_grade_point = 0
 current_credits_taken = 0
+
+# 2
 target = 3
 target_max = 3.02
+
+# 3
 load = {3: 3, 4: 2}
+
+# 4A
 # expected = (Subject(4, 'A'), Subject(3, 'B'))
 expected = None
+
+# 4B
+min_grade = 'C-'
+max_grade = 'A'
+
+# 5
 write_to_file = False
 file_name = "result.txt"
 
@@ -70,10 +89,16 @@ def gpa(gradelist=(), current_grade_point=0, current_credits_taken=0):
 
 
 def main():
+    # Only generate the combinations using the allowed grades
+    allowed_grades = {}
+    for key, lookup in Subject.grade_lookup.items():
+        if Subject.grade_lookup[min_grade]<= lookup <= Subject.grade_lookup[max_grade]:
+            allowed_grades[key] = lookup
+
     # Generate combinations of grades for each credit
     grades_dict = {}
     for c, r in load.items():
-        grades_dict[c] = list(combinations_with_replacement((Subject(c, g) for g in Subject.grade_lookup.keys()), r))
+        grades_dict[c] = list(combinations_with_replacement((Subject(c, g) for g in allowed_grades.keys()), r))
     all_possible_grades_without_expect = list(tuple(chain(*i)) for i in product(*grades_dict.values()))
 
     # Only choose those that have the expected grade.
@@ -110,11 +135,11 @@ def main():
         stdout = sys.stdout
         sys.stdout = open(file_name, 'w')
 
-    print("Your current (C)GPA: {}".format(gpa(current_grade)))
+    print("Your current (C)GPA: {0:.2f}".format(gpa(current_grade)))
     print("Current total credits taken: {}".format(total_credits_taken))
     print("Credits to be taken: {}".format(provisional_credits))
     print("Target: from {} to {}".format(target, target_max))
-    print("Minimum TGPA needed: {}".format(min_tgpa))
+    print("Minimum TGPA needed: {0:.2f}".format(min_tgpa))
     print("Number of results: {}\n".format(len(possible_list)))
     for possible_gpa, possible_grades in possible_list:
         grades_by_credits = groupby(possible_grades, lambda x: x.credit)

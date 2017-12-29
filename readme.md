@@ -1,4 +1,4 @@
-# Grade analyzer
+# Grade analyzer 1.2
 By klwuco (Wu Ka Lok, Cousin).<br>
 UST itsc: klwuab
 
@@ -61,10 +61,16 @@ Note: After running the script directly, the program will just exit. To look at 
    Course credits and number of courses that have that credit for your course to be taken.
    eg: {3:3,4:1,1:2} corresponds to 3 3-credit course, 1 4-credit course and 2 1-credit course.
 
-4) Union(None, tuple) expected
+4) Results Narrowing options
+
+A) Union(None, tuple) expected
    A tuple of Subject class for any assumed grades for the course to be taken.(Subject(credit:int, grade:str))
    None if there is none expected grades.
    eg: (Subject(4, 'A'), Subject(3, 'B'))
+
+B) str min_grade
+   str max_grade
+   The min/max (inclusive) grade that are allowed in the results.
 
 5)
     i) bool write_to_file
@@ -72,3 +78,7 @@ Note: After running the script directly, the program will just exit. To look at 
     ii)str file_name
        The file to redirect the output to
 </pre>
+
+## Grade Point Systems
+This script defaults itself to use the 4.3 point system. If your institute uses a different system, change it in subject.py, in the Subject class.<p>
+
