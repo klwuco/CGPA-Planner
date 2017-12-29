@@ -1,5 +1,5 @@
 # Grade analyzer v1.0
-By klwuco (Wu Ka Lok, Cousin).
+By klwuco (Wu Ka Lok, Cousin).<br>
 UST itsc: klwuab
 
 ## What is this?
@@ -7,15 +7,15 @@ This script finds out the hypothetical CGPA and the grades per subject needed to
 
 
 ## Requirements
-1. python3
-On Mac/Linux, do
-<pre><code>sudo apt-get install python3</code></pre>
-or use your favourite package manager.<br>
-On Windows, download python 3 (Not 2.7) via<br>
-<a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
+1. python3<br>
+    On Mac/Linux, do<br>
+    <pre><code>sudo apt-get install python3</code></pre>
+    or use your favourite package manager.<br>
+    On Windows, download python 3 (Not 2.7) via<br>
+    <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
 
 2. some text editor for opening .py files (eg: vim, gnu nano, notepad, emacs, sublime text, etc.)<br>
-Or use your favourite IDE (eg. vim, PyCharm, VS, etc.)<br>
+    Or use your favourite IDE (eg. vim, PyCharm, VS, etc.)<br>
 
 
 ## Usage
