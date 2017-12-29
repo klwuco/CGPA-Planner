@@ -10,12 +10,12 @@ This script finds out the hypothetical CGPA and the grades per subject needed to
 1. python3
 On Mac/Linux, do
 <pre><code>sudo apt-get install python3</code></pre>
-or use your favourite package manager.
-On Windows, download python 3 (Not 2.7) via
+or use your favourite package manager.<br>
+On Windows, download python 3 (Not 2.7) via<br>
 <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
 
-2. some text editor for opening .py files (eg: vim, gnu nano, notepad, emacs, sublime text, etc.)
-Or use your favourite IDE (eg. vim, PyCharm, VS, etc.)
+2. some text editor for opening .py files (eg: vim, gnu nano, notepad, emacs, sublime text, etc.)<br>
+Or use your favourite IDE (eg. vim, PyCharm, VS, etc.)<br>
 
 
 ## Usage
@@ -31,11 +31,12 @@ or
 ### Windows
 In cmd, execute
 <pre><code>python analyzer.py</code></pre>
-or just run analyzer.py directly.
+or just run analyzer.py directly.<br>
 Note: After running the script directly, the program will just exit. To look at your results, change write_to_file to True.
 
 
 ## Variables to change
+<pre>
 1) current_grade / (current_grade_point and current_credits_taken)
     i)  tuple current_grade: A tuple of the Subject class. (Subject(credit:int, grade:str))
         eg: (Subject(3, 'B'), Subject(3, 'B-'), Subject(3, 'C'), Subject(4, 'A+'), Subject(1, 'F'))
@@ -70,3 +71,4 @@ Note: After running the script directly, the program will just exit. To look at 
        If set to true: redirect the output to a file
     ii)str file_name
        The file to redirect the output to
+</pre>
