@@ -79,6 +79,9 @@ B) str min_grade
        The file to redirect the output to
 </pre>
 
-## Grade Point Systems
+## Note
+### Grade Point Systems
 This script defaults itself to use the 4.3 point system. If your institute uses a different system, change it in subject.py, in the Subject class.<p>
 
+### Results
+The number of results can be huge, so narrowing the restrictions, i.e. those in (4) in the section Variable to change, really helps decrease the results, and time taken for you to read it.
