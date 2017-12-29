@@ -6,7 +6,7 @@ If a copy of the MPL was not distributed with this file, You can obtain one at h
 from itertools import combinations_with_replacement, chain, product, groupby
 from subject import Subject
 """
-Grade Analyzer v1.0
+Grade Analyzer v1.1
 by klwuco (Wu Ka Lok, Cousin)
 Printing out the hypothetical CGPA and the grades per subject needed to achieve a target CGPA target range.
 
@@ -42,7 +42,7 @@ Variables to change:
 
 5)
     i) bool write_to_file
-       If set to true: redirect the output to a file
+       If set to True: redirect the output to a file
     ii)str file_name
        The file to redirect the output to
 """
@@ -53,10 +53,10 @@ current_grade_point = 0
 current_credits_taken = 0
 target = 3
 target_max = 3.02
-load = {3: 3, 4: 1}
+load = {3: 3, 4: 2}
 # expected = (Subject(4, 'A'), Subject(3, 'B'))
 expected = None
-write_to_file = True
+write_to_file = False
 file_name = "result.txt"
 
 
@@ -98,6 +98,12 @@ def main():
             possible_list.append([possible_gpa, possible_grades])
     possible_list.sort(key=lambda l: l[0])
 
+    # min tgpa needed
+    total_credits_taken = sum(sbj.credit for sbj in current_grade)
+    provisional_credits =  sum(c*n for c, n in load.items())
+    total_credits = total_credits_taken + current_credits_taken + provisional_credits
+    min_tgpa = (target*total_credits - gpa(current_grade)*total_credits_taken - current_credits_taken*current_grade_point)/provisional_credits
+
     # Printing
     if write_to_file:
         import sys
@@ -105,6 +111,10 @@ def main():
         sys.stdout = open(file_name, 'w')
 
     print("Your current (C)GPA: {}".format(gpa(current_grade)))
+    print("Current total credits taken: {}".format(total_credits_taken))
+    print("Credits to be taken: {}".format(provisional_credits))
+    print("Target: from {} to {}".format(target, target_max))
+    print("Minimum TGPA needed: {}".format(min_tgpa))
     print("Number of results: {}\n".format(len(possible_list)))
     for possible_gpa, possible_grades in possible_list:
         grades_by_credits = groupby(possible_grades, lambda x: x.credit)

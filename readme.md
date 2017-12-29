@@ -1,9 +1,9 @@
-# Grade analyzer v1.0
+# Grade analyzer
 By klwuco (Wu Ka Lok, Cousin).<br>
 UST itsc: klwuab
 
 ## What is this?
-This script finds out the hypothetical CGPA and the grades per subject needed to achieve a target CGPA target range.
+This script finds out the hypothetical CGPA and the grades per subject needed to achieve a target CGPA range.
 
 
 ## Requirements
@@ -68,7 +68,7 @@ Note: After running the script directly, the program will just exit. To look at 
 
 5)
     i) bool write_to_file
-       If set to true: redirect the output to a file
+       If set to True: redirect the output to a file
     ii)str file_name
        The file to redirect the output to
 </pre>
