@@ -1,3 +1,9 @@
+"""
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+"""
+
+
 class Subject:
 
     grade_lookup = {'F': 0, 'D': 1, 'C-': 1.7, 'C': 2, 'C+': 2.3,

@@ -3,13 +3,13 @@ By klwuco (Wu Ka Lok, Cousin).
 UST itsc: klwuab
 
 ## What is this?
-This script prints out the hypothetical CGPA and the grades per subject needed to achieve a target CGPA target range.
+This script finds out the hypothetical CGPA and the grades per subject needed to achieve a target CGPA target range.
 
 
 ## Requirements
 1. python3
 On Mac/Linux, do
-    sudo apt-get install python3
+<pre><code>sudo apt-get install python3</code></pre>
 or use your favourite package manager.
 On Windows, download python 3 (Not 2.7) via
 <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
@@ -24,13 +24,13 @@ First, edit analyzer.py to change the variables. (refer the the Variables to cha
 To run the script:
 ### Mac/Linux
 In your terminal, execute
-    ./analyzer.py
+<pre><code>./analyzer.py</code></pre>
 or
-    python3 analyzer.py
+<pre><code>python3 analyzer.py</code></pre>
 
 ### Windows
 In cmd, execute
-    python analyzer.py
+<pre><code>python analyzer.py</code></pre>
 or just run analyzer.py directly.
 Note: After running the script directly, the program will just exit. To look at your results, change write_to_file to True.
 
