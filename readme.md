@@ -1,4 +1,4 @@
-# Grade analyzer 1.2
+# CGPA Planner 1.2
 By klwuco (Wu Ka Lok, Cousin).<br>
 UST itsc: klwuab
 

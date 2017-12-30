@@ -3,7 +3,7 @@
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-Grade Analyzer v1.2
+CGPA Planner v1.2
 by klwuco (Wu Ka Lok, Cousin)
 Printing out the hypothetical CGPA and the grades per subject needed to achieve a target CGPA target range.
 
