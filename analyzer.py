@@ -55,6 +55,7 @@ from subject import Subject
 # Variables
 # 1
 current_grade = (Subject(3, 'B'), Subject(3, 'A-'), Subject(3, 'D'), Subject(4, 'B+'))
+# current_grade = ()
 current_grade_point = 0
 current_credits_taken = 0
 
@@ -66,8 +67,8 @@ target_max = 3.02
 load = {3: 3, 4: 2}
 
 # 4A
-# expected = (Subject(4, 'A'), Subject(3, 'B'))
-expected = None
+expected = (Subject(4, 'A+'), Subject(4, 'B'))
+# expected = None
 
 # 4B
 min_grade = 'C-'
@@ -83,7 +84,7 @@ def gpa(gradelist=(), current_grade_point=0, current_credits_taken=0):
     total_load = sum(sbj.credit for sbj in gradelist) + current_credits_taken
     try:
         return weighted_gp / total_load
-    except ZeroDivisionError:  # How is that even possible?
+    except ZeroDivisionError:
         return 0
 
 
@@ -91,28 +92,31 @@ def main():
     # Only generate the combinations using the allowed grades
     allowed_grades = {}
     for key, lookup in Subject.grade_lookup.items():
-        if Subject.grade_lookup[min_grade]<= lookup <= Subject.grade_lookup[max_grade]:
+        if Subject.grade_lookup[min_grade] <= lookup <= Subject.grade_lookup[max_grade]:
             allowed_grades[key] = lookup
 
-    # Generate combinations of grades for each credit
-    grades_dict = {}
-    for c, r in load.items():
-        grades_dict[c] = list(combinations_with_replacement((Subject(c, g) for g in allowed_grades.keys()), r))
-    all_possible_grades_without_expect = list(tuple(chain(*i)) for i in product(*grades_dict.values()))
-
-    # Only choose those that have the expected grade.
-    # Can't just use set intersection due to there being repeats
-    all_possible_grades = []
+    # Generate combinations of grades for each credit without courses with predicted grades
+    accounted_load = {}
     if expected:
-        for possible_grades in all_possible_grades_without_expect:
-            g = list(possible_grades)
-            for grades in possible_grades:
-                if grades in expected:
-                    g.remove(grades)
-            if len(g) == len(possible_grades) - len(expected):
-                all_possible_grades.append(possible_grades)
+        for c in load:
+            accounted_load[c] = load[c] - len([sbj for sbj in expected if sbj.credit == c])
     else:
-        all_possible_grades = all_possible_grades_without_expect
+        accounted_load = load
+    grades_dict = {}
+    for c, r in accounted_load.items():
+        grades_dict[c] = list(combinations_with_replacement((Subject(c, g)
+                                                             for g in allowed_grades.keys()), r))
+
+    # Append back the predicted grades
+    if expected:
+        all_possible_grades = []
+        for i in product(*grades_dict.values()):
+            append_list = list(chain(*i)) + list(expected)
+            append_list.sort(key=lambda x: x.credit)
+            all_possible_grades.append(tuple(append_list))
+    else:
+        all_possible_grades = list(tuple(chain(*i))
+                                   for i in product(*grades_dict.values()))
 
     # Compare
     possible_list = []
@@ -124,9 +128,11 @@ def main():
 
     # min tgpa needed
     total_credits_taken = sum(sbj.credit for sbj in current_grade)
-    provisional_credits =  sum(c*n for c, n in load.items())
+    provisional_credits = sum(c * n for c, n in load.items())
     total_credits = total_credits_taken + current_credits_taken + provisional_credits
-    min_tgpa = (target*total_credits - gpa(current_grade)*total_credits_taken - current_credits_taken*current_grade_point)/provisional_credits
+    min_tgpa = (target * total_credits -
+                gpa(current_grade) * total_credits_taken - current_credits_taken * current_grade_point)\
+        / provisional_credits
 
     # Printing
     if write_to_file:
@@ -135,16 +141,16 @@ def main():
         sys.stdout = open(file_name, 'w')
 
     print("Your current (C)GPA: {0:.2f}".format(gpa(current_grade)))
-    print("Current total credits taken: {}".format(total_credits_taken))
-    print("Credits to be taken: {}".format(provisional_credits))
-    print("Target: from {} to {}".format(target, target_max))
+    print("Current total credits taken: {0}".format(total_credits_taken))
+    print("Credits to be taken: {0}".format(provisional_credits))
+    print("Target: from {0} to {1}".format(target, target_max))
     print("Minimum TGPA needed: {0:.2f}".format(min_tgpa))
-    print("Number of results: {}\n".format(len(possible_list)))
+    print("Number of results: {0}\n".format(len(possible_list)))
     for possible_gpa, possible_grades in possible_list:
         grades_by_credits = groupby(possible_grades, lambda x: x.credit)
         print("CGPA: {0:.2f}\nGrades required to achieve:".format(possible_gpa))
         for credits, group in grades_by_credits:
-            print("{}-credit course: ".format(credits), end="")
+            print("{0}-credit course: ".format(credits), end="")
             for sbj in group:
                 print(sbj.grade, end=" ")
             print()
