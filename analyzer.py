@@ -2,10 +2,7 @@
 """
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
-"""
-from itertools import combinations_with_replacement, chain, product, groupby
-from subject import Subject
-"""
+
 Grade Analyzer v1.2
 by klwuco (Wu Ka Lok, Cousin)
 Printing out the hypothetical CGPA and the grades per subject needed to achieve a target CGPA target range.
@@ -52,6 +49,8 @@ B) str min_grade
     ii)str file_name
        The file to redirect the output to
 """
+from itertools import combinations_with_replacement, chain, product, groupby
+from subject import Subject
 
 # Variables
 # 1
