@@ -1,2 +1,8 @@
 __pycache__/
+build/
+dist/
 result.txt
+setup.py
+build.bat
+tcl86t.dll
+tk86t.dll
