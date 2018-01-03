@@ -1,0 +1,897 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="ttk.Frame" id="Frame">
+    <property name="height">200</property>
+    <property name="width">200</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="ttk.Frame" id="Frame_Expected_Grade">
+        <property name="height">200</property>
+        <property name="padding">4</property>
+        <property name="relief">groove</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="padx">2</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+        <child>
+          <object class="ttk.Frame" id="Course_1">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+            <child>
+              <object class="ttk.Combobox" id="credit_1">
+                <property name="state">normal</property>
+                <property name="textvariable">int:credit_1</property>
+                <property name="values">1 2 3 4 5</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="ipadx">0</property>
+                  <property name="padx">6</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">nw</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="grade_1">
+                <property name="textvariable">string:grade_1</property>
+                <property name="values">"" A+ A A- B+ B B- C+ C C- D F</property>
+                <property name="width">4</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_credit">
+                <property name="text" translatable="yes">Credit(s)</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_grade">
+                <property name="text" translatable="yes">Grade</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="columnspan">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_course_1">
+                <property name="text" translatable="yes">Course 1</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="Course_2">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+            </layout>
+            <child>
+              <object class="ttk.Combobox" id="credit_2">
+                <property name="state">normal</property>
+                <property name="textvariable">int:credit_2</property>
+                <property name="values">1 2 3 4 5</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="ipadx">0</property>
+                  <property name="padx">6</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">nw</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="grade_2">
+                <property name="textvariable">string:grade_2</property>
+                <property name="values">"" A+ A A- B+ B B- C+ C C- D F</property>
+                <property name="width">4</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_credit_6">
+                <property name="text" translatable="yes">Credit(s)</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_grade_7">
+                <property name="text" translatable="yes">Grade</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="columnspan">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_course_2">
+                <property name="text" translatable="yes">Course 2</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="sticky">e</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="Course_3">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">4</property>
+            </layout>
+            <child>
+              <object class="ttk.Combobox" id="credit_3">
+                <property name="state">normal</property>
+                <property name="takefocus">false</property>
+                <property name="textvariable">int:credit_3</property>
+                <property name="values">1 2 3 4 5</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="ipadx">0</property>
+                  <property name="padx">6</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">nw</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="grade_3">
+                <property name="textvariable">string:grade_3</property>
+                <property name="values">"" A+ A A- B+ B B- C+ C C- D F</property>
+                <property name="width">4</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_credit_9">
+                <property name="text" translatable="yes">Credit(s)</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_grade_10">
+                <property name="text" translatable="yes">Grade</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="columnspan">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_course_3">
+                <property name="text" translatable="yes">Course 3</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="Course_4">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">5</property>
+            </layout>
+            <child>
+              <object class="ttk.Combobox" id="credit_4">
+                <property name="state">normal</property>
+                <property name="textvariable">int:credit_4</property>
+                <property name="values">1 2 3 4 5</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="ipadx">0</property>
+                  <property name="padx">6</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">nw</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="grade_4">
+                <property name="textvariable">string:grade_4</property>
+                <property name="values">"" A+ A A- B+ B B- C+ C C- D F</property>
+                <property name="width">4</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_credit_12">
+                <property name="text" translatable="yes">Credit(s)</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_grade_13">
+                <property name="text" translatable="yes">Grade</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="columnspan">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_course_4">
+                <property name="text" translatable="yes">Course 4</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="Course_5">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">6</property>
+            </layout>
+            <child>
+              <object class="ttk.Combobox" id="credit_5">
+                <property name="state">normal</property>
+                <property name="textvariable">int:credit_5</property>
+                <property name="values">1 2 3 4 5</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="ipadx">0</property>
+                  <property name="padx">6</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">nw</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="grade_5">
+                <property name="textvariable">string:grade_5</property>
+                <property name="values">"" A+ A A- B+ B B- C+ C C- D F</property>
+                <property name="width">4</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_credit_15">
+                <property name="text" translatable="yes">Credit(s)</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_grade_16">
+                <property name="text" translatable="yes">Grade</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="columnspan">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_course_5">
+                <property name="text" translatable="yes">Course 5</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="Course_6">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">7</property>
+            </layout>
+            <child>
+              <object class="ttk.Combobox" id="credit_6">
+                <property name="state">normal</property>
+                <property name="textvariable">int:credit_6</property>
+                <property name="values">1 2 3 4 5</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="ipadx">0</property>
+                  <property name="padx">6</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">nw</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="grade_6">
+                <property name="textvariable">string:grade_6</property>
+                <property name="values">"" A+ A A- B+ B B- C+ C C- D F</property>
+                <property name="width">4</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_credit_18">
+                <property name="text" translatable="yes">Credit(s)</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_grade_19">
+                <property name="text" translatable="yes">Grade</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="columnspan">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_course_6">
+                <property name="text" translatable="yes">Course 6</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="Course_7">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">8</property>
+            </layout>
+            <child>
+              <object class="ttk.Combobox" id="credit_1_7">
+                <property name="state">normal</property>
+                <property name="textvariable">int:credit_7</property>
+                <property name="values">1 2 3 4 5</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="ipadx">0</property>
+                  <property name="padx">6</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">nw</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="grade_1_7">
+                <property name="textvariable">string:grade_7</property>
+                <property name="values">"" A+ A A- B+ B B- C+ C C- D F</property>
+                <property name="width">4</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_credit_21">
+                <property name="text" translatable="yes">Credit(s)</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_grade_22">
+                <property name="text" translatable="yes">Grade</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="columnspan">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_course_7">
+                <property name="text" translatable="yes">Course 7</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="l_expected_grade">
+            <property name="text" translatable="yes">Expected Grade For Provisional Courses</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">n</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="Left">
+        <property name="height">200</property>
+        <property name="padding">4</property>
+        <property name="relief">groove</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">2</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="ttk.Frame" id="Current_Grades">
+            <property name="height">200</property>
+            <property name="padding">4</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">n</property>
+            </layout>
+            <child>
+              <object class="ttk.Entry" id="current_GP">
+                <property name="justify">center</property>
+                <property name="textvariable">double:current_grade_point</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Entry" id="current_Credit">
+                <property name="justify">center</property>
+                <property name="textvariable">int:current_credits_taken</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">3</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_current_gp">
+                <property name="text" translatable="yes">Current Total Grade Points</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_current_credit">
+                <property name="text" translatable="yes">Current Total Counted Credits</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Button" id="how_to_check_value">
+                <property name="command">clicked_how_to_check_value</property>
+                <property name="state">normal</property>
+                <property name="text" translatable="yes">?</property>
+                <property name="width">1</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="Load">
+            <property name="height">200</property>
+            <property name="padding">4</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+            </layout>
+            <child>
+              <object class="ttk.Label" id="l_load">
+                <property name="text" translatable="yes">Provisional Load:</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_1c">
+                <property name="text" translatable="yes">1-credit course:</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="load_1c">
+                <property name="textvariable">int:load_1c</property>
+                <property name="values">0 1 2 3 4 5 6 7</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_2c">
+                <property name="text" translatable="yes">2-credit course:</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="load_2c">
+                <property name="textvariable">int:load_2c</property>
+                <property name="values">0 1 2 3 4 5 6 7</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_3c">
+                <property name="text" translatable="yes">3-credit course:</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">3</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="load_3c">
+                <property name="textvariable">int:load_3c</property>
+                <property name="values">0 1 2 3 4 5 6 7</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">3</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_4c">
+                <property name="text" translatable="yes">4-credit course:</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">4</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="load_4c">
+                <property name="textvariable">int:load_4c</property>
+                <property name="values">0 1 2 3 4 5 6 7</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">4</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_5c">
+                <property name="text" translatable="yes">5-credit course:</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">5</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="load_5c">
+                <property name="textvariable">int:load_5c</property>
+                <property name="values">0 1 2 3 4 5 6 7</property>
+                <property name="width">2</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">5</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="Grade_Constraints">
+            <property name="height">200</property>
+            <property name="padding">4</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+            </layout>
+            <child>
+              <object class="ttk.Label" id="l_min_grade">
+                <property name="text" translatable="yes">Min Expected Grade:</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_max_grade">
+                <property name="text" translatable="yes">Max Expected Grade:</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="min_grade">
+                <property name="textvariable">string:min_grade</property>
+                <property name="values">A+ A A- B+ B B- C+ C C- D F</property>
+                <property name="width">3</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="max_grade">
+                <property name="textvariable">string:max_grade</property>
+                <property name="values">A+ A A- B+ B B- C+ C C- D F</property>
+                <property name="width">3</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                  <property name="sticky">n</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="Target_gpa">
+            <property name="height">200</property>
+            <property name="padding">4</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">4</property>
+            </layout>
+            <child>
+              <object class="ttk.Label" id="l_target_min">
+                <property name="text" translatable="yes">Min Target CGPA:</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="l_target_max">
+                <property name="text" translatable="yes">Max Target CGPA:</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Entry" id="target_min">
+                <property name="text" translatable="yes">3.00</property>
+                <property name="textvariable">double:target_min</property>
+                <property name="width">5</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Entry" id="target_max">
+                <property name="text" translatable="yes">4.30</property>
+                <property name="textvariable">double:target_max</property>
+                <property name="width">5</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="Submit">
+        <property name="command">analyze</property>
+        <property name="state">normal</property>
+        <property name="text" translatable="yes">Submit</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+          <property name="rowspan">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="Name">
+        <property name="font">TkHeadingFont</property>
+        <property name="padding">6</property>
+        <property name="text" translatable="yes">CGPA Planner</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>

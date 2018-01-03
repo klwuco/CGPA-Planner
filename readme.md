@@ -1,4 +1,4 @@
-# CGPA Planner 1.2
+# CGPA Planner 1.3
 By klwuco (Wu Ka Lok, Cousin).<br>
 UST itsc: klwuab
 
@@ -7,47 +7,66 @@ This script finds out the hypothetical CGPA and the grades per subject needed to
 
 
 ## Requirements
-1. python3<br>
+### Running the frozen gui (Windows only, python 3.6)
+1. Get the binary from release.<br>
+2. python **3.6**
+    On Windows, download python 3.6 via<br>
+    <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
+
+### Running the source code
+1. Clone the repo.<br>
+2. python3<br>
     On Mac/Linux, do<br>
     <pre><code>sudo apt-get install python3</code></pre>
     or use your favourite package manager.<br>
     On Windows, download python 3 (Not 2.7) via<br>
     <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
 
-2. some text editor for opening .py files (eg: vim, gnu nano, notepad, emacs, sublime text, etc.)<br>
+3. some text editor for opening .py files (eg: vim, gnu nano, notepad, emacs, sublime text, etc.)<br>
     Or use your favourite IDE (eg. vim, PyCharm, VS, etc.)<br>
 
+### Running the gui with source code
+1. Clone the repo.<br>
+2. python3 and text editor
+3. install requirements
+    Do <br>
+    <pre><code>pip3 install -r requirements.txt</code></pre>
+    or just do<br>
+    <pre><code>pip3 install pygubu</code></pre>
 
 ## Usage
-First, edit analyzer.py to change the variables. (refer the the Variables to change section.)
 
-To run the script:
-### Mac/Linux
+### Running the frozen gui (Windows only, python 3.6)
+Run gui.exe<br>
+
+### Running the source code
+1.Edit analyzer.py to change the variables. (refer the the Variables to change section.)<br>
+
+2.To run the script:<br>
+#### Mac/Linux
 In your terminal, execute
 <pre><code>./analyzer.py</code></pre>
 or
 <pre><code>python3 analyzer.py</code></pre>
 
-### Windows
+#### Windows
 In cmd, execute
 <pre><code>python analyzer.py</code></pre>
 or just run analyzer.py directly.<br>
 Note: After running the script directly, the program will just exit. To look at your results, change write_to_file to True.
 
+### Running the gui from source code
+Run gui.py using the instructions above, replacing analyzer.py with gui.py<br>
+Be sure to install pygubu first.<br>
 
 ## Variables to change
 <pre>
-1) current_grade / (current_grade_point and current_credits_taken)
-    i)  tuple current_grade: A tuple of the Subject class. (Subject(credit:int, grade:str))
-        eg: (Subject(3, 'B'), Subject(3, 'B-'), Subject(3, 'C'), Subject(4, 'A+'), Subject(1, 'F'))
-            stands for 4 3-credit course with B, B- and C, a 4-credit course with an A+ and
-            a failed 1-credit course. Do not put in P/PP/F courses.
-    ii) float current_grade_point
+1) current_grade_point and current_credits_taken
+    i) float current_grade_point
         int   current_credits_taken -- only use the credits counted for GPA, not those with P/PP/F
         self-explanatory. To check both, head to sis -> enroll -> term information -> View my grades
     Note:
-        a) Only one (can use both) are needed to be filled for the script to work.
-        b) If current_grade, current_grade_point and current_credits_taken are left empty (current_grade set to empty tuple ()),
+        b) If current_grade_point and current_credits_taken are left empty,
            hypothetical TGA is calculated instead.
 
 2) float target: Your target CGPA
@@ -63,10 +82,11 @@ Note: After running the script directly, the program will just exit. To look at 
 
 4) Results Narrowing options
 
-A) Union(None, tuple) expected
-   A tuple of Subject class for any assumed grades for the course to be taken.(Subject(credit:int, grade:str))
+A) list expected
+   A list of Subject class for any assumed grades for the course to be taken.(Subject(credit:int, grade:str))
    None if there is none expected grades.
-   eg: (Subject(4, 'A'), Subject(3, 'B'))
+   eg: [Subject(4, 'A'), Subject(3, 'B')]
+   eg: []
 
 B) str min_grade
    str max_grade
